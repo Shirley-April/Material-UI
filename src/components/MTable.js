@@ -8,6 +8,9 @@ import { Table,
  TableHead, 
  TableRow, 
  Paper,
+ Avatar,
+ Grid,
+ Typography,
 } from '@material-ui/core'
 
 
@@ -26,43 +29,88 @@ for(let i = 0; i < 14; i++){
 
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     table: {
       minWidth: 650,
     },
-  }); 
+    tableContainer: {
+        borderRadius: 15,
+        margin: "10px 10px",
+        maxWidth: 950
+    },
+    tableHeaderCell: {
+        fontWeight: "bold",
+        backgroundColor: theme.palette.primary.dark,
+        color: theme.palette.getContrastText(theme.palette.primary.dark),
+    },
+    avatar: {
+        backgroundColor: theme.palette.secondary.light,
+        color: theme.palette.getContrastText(theme.palette.secondary.light)
+    },
+    name: {
+        fontWeight: "bold",
+        color: theme.palette.secondary.dark
+    },
+    status: {
+        fontWeight: "bold",
+        fontSize: '0.75rem',
+        color: "white",
+        backgroundColor: "grey",
+        padding: "10px 18px",
+        display: "inline-block"
+    }
+
+  })); 
 
 function MTable(){
     const classes = useStyles();
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} className={classes.tableContainer}>
       <Table className={classes.table} aria-label="simple table">
-        <TableHead>
+        <TableHead >
           <TableRow>
-            <TableCell >User Info</TableCell>
-            <TableCell >Job Info</TableCell>
-            <TableCell >Joining date</TableCell>
-            <TableCell >Status</TableCell>
+            <TableCell className={classes.tableHeaderCell} >User Info</TableCell>
+            <TableCell className={classes.tableHeaderCell} >Job Info</TableCell>
+            <TableCell className={classes.tableHeaderCell}>Joining date</TableCell>
+            <TableCell className={classes.tableHeaderCell}>Status</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {USERS.map((row) => (
             <TableRow key={row.name}>
               <TableCell>
-                {row.name}
-                {row.email}
-                {row.phone}
+                  <Grid container>
+                  <Grid item lg={2}>
+                      <Avatar alt={row.name} src='.' className={classes.avatar}/>
+                </Grid>
+                <Grid item lg={10}>
+              <Typography className={classes.name}>{row.name}</Typography> 
+              <Typography color="textSecondary" variant="body2">{row.email}</Typography> 
+              <Typography color="textSecondary" variant="body2">{row.phone}</Typography>  
+                
+                
+                </Grid>
+                </Grid>
               </TableCell>
               <TableCell >
-              {row.jobTitle}
-              {row.company}
+             <Typography color="primary" variant="subtitle2">{row.jobTitle}</Typography>
+             <Typography>{row.company}</Typography> 
+              
               </TableCell>
               <TableCell >
               {row.joinDate}
               </TableCell>
               <TableCell >
-              {row.status}
+             <Typography 
+             className={classes.status}
+             style ={{
+                 backgroundColor:
+                ((row.status === "Active" && "green")) ||
+                ((row.status === "Pending" && "blue")) ||
+                ((row.status === "Blocked" && "orange"))
+             }}
+             >{row.status}</Typography> 
               </TableCell>
             </TableRow>
           ))}
