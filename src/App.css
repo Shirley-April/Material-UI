@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,32 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+
+/* table{
+  margin-top: 50px;
+   margin-right: 80px;
+   margin-left: 80px;
 }
+th, td {
+ margin-left: 150px;
+ padding: 30px;
+ text-align: center;
+}
+
+th {
+ 
+ background-color: #f2f2f2;
+ padding-left: 150px;
+ padding-right: 150px;
+}
+
+table, th, td {
+ border: 1px solid rgb(131, 131, 131);
+ border-collapse: collapse;
+}
+
+.nav{
+ list-style: none;
+} */
