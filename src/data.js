@@ -1,50 +1,50 @@
 export default [
     {
        Id: 1, 
-       Study:  "StudyA",
-       Patient: "Patient1",
-       Process: "Process",
-       View: "View",
+       name:  "name",
+       Company: "Company1",
+       Job: "Job",
+       Active: "Active",
     },
 
     {
         Id: 2, 
-        Study:  "StudyA",
-        Patient: "Patient2",
-        Process: "Process",
-        View: "View",
+        name:  "nameA",
+        Company: "Company2",
+        Job: "Job",
+        Active: "Active",
      },
 
      {
         Id: 3, 
-        Study:  "StudyC",
-        Patient: "Patient3",
-        Process: "Process",
-        View: "View",
+        name:  "nameC",
+        Company: "Company3",
+        Job: "Job",
+        Active: "Active",
      },
 
      {
         Id: 4, 
-        Study:  "StudyD",
-        Patient: "Patient4",
-        Process: "Process",
-        View: "View",
+        name:  "nameD",
+        Company: "Company4",
+        Job: "Job",
+        Active: "Active",
      },
 
      {
         Id: 5, 
-        Study:  "StudyE",
-        Patient: "Patient5",
-        Process: "Process",
-        View: "View",
+        name:  "nameE",
+        Company: "Company5",
+        Job: "Job",
+        Active: "Active",
      },
 
      {
         Id: 6, 
-        Study:  "StudyF",
-        Patient: "Patient6",
-        Process: "Process",
-        View: "View",
+        name:  "nameF",
+        Company: "Company6",
+        Job: "Job",
+        Active: "Active",
      },
 
 
